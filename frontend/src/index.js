@@ -6,6 +6,8 @@ import './styles/sliders.css'
 import './styles/quota_container.css'
 import './styles/footer.css'
 
+import { IOF, INTEREST_RATE } from './config/constants'
+
 export const checkFormValidity = formElement => formElement.checkValidity()
 
 export const getFormValues = formElement =>
@@ -18,10 +20,8 @@ export const getFormValues = formElement =>
 
 export const toStringFormValues = values => {
   const match = matchString => value => value.field === matchString
-  const IOF = 6.38 / 100
-  const INTEREST_RATE = 2.34 / 100
   const TIME = values.find(match('parcelas')).value / 1000
-  const VEHICLE_LOAN_AMOUNT = values.find(match('valor-emprestimo')).value
+  const VEHICLE_LOAN_AMOUNT = values.find(match('valor-emprestimo'))
 
   return `Confirmação\n${values
     .map(value => `Campo: ${value.field}, Valor: ${value.value}`)
