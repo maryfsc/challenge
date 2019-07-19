@@ -1,4 +1,10 @@
-import './styles.css'
+import './styles/globals.css'
+import './styles/header.css'
+import './styles/main.css'
+import './styles/form.css'
+import './styles/sliders.css'
+import './styles/quota_container.css'
+import './styles/footer.css'
 
 export const checkFormValidity = formElement => formElement.checkValidity()
 
